@@ -46,11 +46,13 @@ class HomeScreen extends StatelessWidget {
           } else if (state is InitialState) {
             return NoWeather();
           } else if (state is WeatherFaliureState) {
-            return Center(child: Text("Error: ${state.message}"));
+            return Center(
+              child: Text("Error: Invalid city ,try another valid city"),
+            );
           } else if (state is WeatherLoadingState) {
             return Center(child: CircularProgressIndicator());
           } else {
-            return Center(child: Text(';dfghjhgfdsasdfghjkjhgfdx'));
+            return Center(child: Text('error'));
           }
         },
       ),
